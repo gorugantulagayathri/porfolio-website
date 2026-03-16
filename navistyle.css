@@ -1,0 +1,26 @@
+h2{
+    font-size: 32px;
+}
+p,li{
+    font-size: 25px;
+}
+.body-background
+{
+    background-color: rgb(241, 154, 183);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: wheat;
+}
+.navbar{
+background-color: rgb(196,230,230);
+width: fit-content;
+padding: 30px;
+border-radius: 30px;
+color: black;
+font-weight: bold;
+}
+a{
+    color: palevioletred;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            background: linear-gradient(to top, rgb(136, 196, 226) , lightyellow);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 35px;
+            height: 100vh;
+            font-weight: bold;
+        }
+        button{
+            border-radius: 10px;
+            height: 25px;
+            width: 70px;
+            background-color: rgb(144, 205, 238);
+            transition: all 0.3s ease;
+        }
+        button:hover{
+            transform: translate3d(5px,5px);
+            box-shadow: 2px 2px 4px gray;
+            background-color: rgb(102, 177, 234);
+        }
+    </style>
+</head>
+<body>
+    <h1>Age Predictor</h1>
+    <label>Guess Age</label>
+    <br>
+    <input id="age" type="number" placeholder="Enter Age">
+    <button id="check">Check</button>
+    <p id="result"></p>
+    
+    <script>
+        const age = document.getElementById("age");
+        const checkbtn = document.getElementById("check");
+        let random = Math.ceil(Math.random() * 50); // *50 means generates random numbers from 0 to 50
+        console.log(random);
+        checkbtn.onclick = function() {
+            let ageInput = Number(age.value);
+            if (ageInput > random) {
+                document.getElementById("result").textContent = "Age is too high. Try Again";
+            } else if (ageInput < random) { 
+                document.getElementById("result").textContent = "Age is too low. Try Again";
+            } else {
+                document.getElementById("result").textContent = "Yaahh!! You got it right! Krishna's proud";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+

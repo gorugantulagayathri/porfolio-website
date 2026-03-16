@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Counter</title>
+        <style>
+            body{
+                text-align: center;
+                background: linear-gradient(to top, rgb(160, 191, 227), rgb(221, 234, 147));
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                height: 100vh;
+            }
+            h1{
+                font-size: 50px;
+            }
+            label {
+                font-size: 80px;
+                padding: 50px;
+                margin: 20px;
+            }
+            button {
+                border-radius: 10px;
+                width: 80px;
+                padding: 10px;
+                margin: 20px;
+                font-weight: bold;
+                transition: all 0.3s ease
+            }
+            button:hover{
+                transform: scale(1.2);
+                box-shadow: 2px 2px 2px black;
+                background-color: rgb(217, 238, 238);
+            }
+            .box{
+                display: flex;
+                margin: auto;
+                width: 300px;
+                height: 100px;
+                background-color: aliceblue;
+                border-radius: 10px;
+                border: solid;
+                text-align: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>COUNTER</h1>
+        <label id="number">0</label>
+        <div>
+            <button id="raise">Raise</button>
+            <button id="clear">Clear</button>
+            <button id="down">Down</button>
+        </div>
+
+        <br><br>
+
+        <div class="box">
+            <h3 id="message" style="margin: auto;"></h3>
+        </div>
+
+        <script>
+            const labelvalue = document.getElementById("number");
+            const raisebtn = document.getElementById("raise");
+            const clearbtn = document.getElementById("clear");
+             const downbtn = document.getElementById("down");
+             const message = document.getElementById("message");
+             let count = 0;
+             raisebtn.onclick = function(){
+                count++;
+                labelvalue.textContent = count;
+                message.textContent = "Counter Incrementation...";
+             }
+             clearbtn.onclick = function(){
+                count = 0;
+                labelvalue.textContent = count;
+                message.textContent = "Counter Cleared";
+             }
+             downbtn.onclick = function(){
+                if(count >0){
+                    count--;
+                    message.textContent = "Counter Decremented...";
+                } else {
+                    count = 0;
+                    message.textContent = "Cannot Decrement Further";
+                }
+                labelvalue.textContent = count;
+             }
+        </script>
+    </body>
+</html>
+
+
+

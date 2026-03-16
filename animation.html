@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced CSS Animations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background : linear-gradient(to left, #667eea, pink);
+    text-align: center;    }
+    .main{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+     h1{
+        transition: all 0.3 ease;
+     }
+     h1:hover{
+        transform: translateY(-5px);
+        color: palevioletred;
+        box-shadow: 5px 5px 15px rgb(189, 65, 86) ;
+
+     }
+    .card{
+        width: 260px;
+        background: linear-gradient(to right,pink,rgb(56, 56, 109));
+        border-radius: 25px;
+        padding: 20px;
+        border: 5px solid skyblue;
+        transition: all 0.5s ease-in;
+        
+    }
+    .card:hover{
+transform:translate(5px,-5px);
+box-shadow: 5px 5px 10px rgb(150, 40, 40);
+
+    }
+button{
+background-color: blue;
+color: black;
+border-radius: 15px;
+translate: all 0.5s ease-in;
+}
+.slide-card{
+animation: slideIn  2s ease infinite;
+}
+@keyframes slideIn{
+    from{
+        transform:translateY(-100%);
+    }
+    to{
+        transform:translateY(0);
+    }
+}
+button:hover{
+    background-color: rgb(202, 88, 202);
+    color: white;
+    transform:translate(4px,-4px);
+}
+.bounce-card{
+    animation:bounceIn 2s ease infinite;
+}
+@keyframes bounceIn{
+    from{
+        transform:translateX(-100%);
+    }
+    to{
+        transform:translateX(0);
+    }
+}
+    .rotate-card{
+        position: relative;
+        animation:rotate 2s ease-out 10;
+    }
+@keyframes rotate{
+from{
+    transform:rotate(0deg);
+}
+to{
+    transform: rotate(360deg);
+}
+}
+    .pulse-card{
+        animation:pulse 2s ease infinite;
+    }
+    @keyframes pulse{
+        from{
+            transform:scale(0.7);
+            opacity:0.5;
+        }
+        to{
+           transform:scale(1);
+           opacity:1;
+        }
+    }
+    .loader{
+        height: 50px;
+        width: 50px;
+        border: 5px solid palevioletred;
+        border-radius: 50%;
+        border-top: 5px dotted rgb(165, 17, 165);
+        animation:spin 1s ease infinite;
+        margin: auto;
+    }
+    @keyframes spin{
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform:rotate(360deg);
+        }
+    }
+    .Blink-card{
+      animation: panchak-panchak 1s ease infinite;
+    }
+    @keyframes panchak-panchak{
+      0%{
+        opacity: 1;
+      }
+      50%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+
+</style>
+<body>
+<h1>
+    Animation Examples
+</h1>
+<div class="main">
+    <div class = "card slide-card">
+        <h2>card</h2>
+        <button>Click Me</button>
+    </div>
+    <div class = "card bounce-card">
+        <h2>card</h2>
+        <button>Click Me</button>
+    </div>
+     <div class = "card rotate-card">
+        <h2>card</h2>
+        <button>Click Me</button>
+    </div>
+     <div class = "card">
+        <div class="loader"></div>
+        <h2>card</h2>
+        <button>Click Me</button>
+    </div>
+    <div class = "card pulse-card">
+        <h2>card</h2>
+        <button>Click Me</button>
+    </div>
+    <div class = "card Blink-card">
+        <h2>Blink card</h2>
+        <button>Click Me</button>
+    </div>
+</div>
+</body>
+</html>
